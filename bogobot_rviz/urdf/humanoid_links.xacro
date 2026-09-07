@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!--links-->
+	<xacro:macro name="base_link" params="name x y z row pitch yaw">
+		<link name="${name}">
+			<collision>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}"  />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/torax_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</collision>
+			<visual>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}" />
+                		<geometry>
+                				<!--box size="0.055 0.22 0.3"/-->
+                				<!--box size="0.055 0.22 0.22"/-->
+                    			<mesh filename="package://bogobot_rviz/meshes/torax_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</visual>
+		</link>
+	</xacro:macro>
+
+	<xacro:macro name="motor_28" params="name x y z row pitch yaw">
+		<link name="${name}">
+			<collision>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}"  />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/MOTOR_28.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</collision>
+			<visual>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}" />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/MOTOR_28.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</visual>
+		</link>
+	</xacro:macro>
+
+	<xacro:macro name="shoulder_link_base" params="name x y z row pitch yaw">
+		<link name="${name}">
+			<collision>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}"  />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/metal_hombro_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</collision>
+			<visual>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}" />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/metal_hombro_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</visual>
+		</link>
+	</xacro:macro>
+
+	<xacro:macro name="arm_link" params="name x y z row pitch yaw">
+		<link name="${name}">
+			<collision>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}"  />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/brazo_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</collision>
+			<visual>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}" />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/brazo_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</visual>
+		</link>
+	</xacro:macro>
+
+	<xacro:macro name="palm_link" params="name x y z row pitch yaw">
+		<link name="${name}">
+			<collision>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}"  />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/palma_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</collision>
+			<visual>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}" />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/palma_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</visual>
+		</link>
+	</xacro:macro>
+</robot>
+
