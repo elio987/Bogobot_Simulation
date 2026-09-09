@@ -88,5 +88,22 @@
             		</visual>
 		</link>
 	</xacro:macro>
+
+	<xacro:macro name="hip_metal_link" params="name x y z row pitch yaw">
+		<link name="${name}">
+			<collision>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}"  />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/metal_cadera_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</collision>
+			<visual>
+                		<origin xyz="${x} ${y} ${z}" rpy="${row} ${pitch} ${yaw}" />
+                		<geometry>
+                    			<mesh filename="package://bogobot_rviz/meshes/metal_cadera_b4.STL" scale="0.001 0.001 0.001"/>
+                		</geometry>
+            		</visual>
+		</link>
+	</xacro:macro>
 </robot>
 

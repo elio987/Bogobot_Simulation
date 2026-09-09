@@ -104,6 +104,35 @@
       </geometry>
     </visual>
   </link>
+  <link name="link_right_hip_metal">
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0175"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/metal_cadera_b4.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0175"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/metal_cadera_b4.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link_left_hip_metal">
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0175"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/metal_cadera_b4.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0175"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/metal_cadera_b4.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <!--JOINTS-->
   <!--hombro derecho-->
   <joint name="q1" type="revolute">
     <origin rpy="0 0 0" xyz="0 -0.11 0.58"/>
@@ -152,40 +181,20 @@
     <axis xyz="1 0 0"/>
     <limit effort="2.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="5.76"/>
   </joint>
-  <!-- 
-    <xacro:motor_28 name="left_motor_arm" x = "0" y = "0" z = "0" row = "0" pitch = "0" yaw = "0"/>
-    <xacro:motor_28 name="right_motor_arm" x = "0" y = "0" z = "0" row = "0" pitch = "0" yaw = "0"/>
-    <xacro:shoulder_link_base name="link_left_shoulder" x = "0.0" y = "0.0" z = "0.0" row = "${pi/2}" pitch = "0" yaw = "0"/>
-    <xacro:shoulder_link_base name="link_right_shoulder" x = "0.0" y = "0.0" z = "0.0" row = "${pi/2}" pitch = "0" yaw = "0"/>
-
-
-    <joint name="joint_chest_to_left_motor_shoulder" type="fixed">
-        <axis xyz="0 1 0" />
-        <origin xyz="0 0.0925 0.5714" rpy="0 0 0"/>
-        <parent link="chest"/>
-        <child link="left_motor_arm"/>
-    </joint>
-
-    <joint name="joint_chest_to_right_motor_shoulder" type="fixed">
-        <axis xyz="0 1 0" />
-        <origin xyz="0 -0.0925 0.5714" rpy="0 0 0"/>
-        <parent link="chest"/>
-        <child link="right_motor_arm"/>
-    </joint>
-
-    <joint name="q1" type="revolute">
-        <origin rpy="0 0 0" xyz="0 0.04 0.017" />
-        <child link="link_left_shoulder" />
-        <parent link="left_motor_arm" />
-        <axis xyz="0 1 0" />
-        <limit effort="2.5" lower="${-2*pi}" upper="${2*pi}" velocity="5.76"/>
-    </joint>
-    <joint name="q2_b" type="revolute">
-        <origin rpy="0 0 0" xyz="0 -0.04 0.017" />
-        <child link="link_right_shoulder" />
-        <parent link="right_motor_arm" />
-        <axis xyz="0 1 0" />
-        <limit effort="2.5" lower="${-2*pi}" upper="${2*pi}" velocity="5.76"/>
-    </joint>
-    -->
+  <!--pierna derecha-->
+  <joint name="q7" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0.055 0.3825"/>
+    <parent link="chest"/>
+    <child link="link_right_hip_metal"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="5.76"/>
+  </joint>
+  <!--pierna izquierda-->
+  <joint name="q8" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.055 0.3825"/>
+    <parent link="chest"/>
+    <child link="link_left_hip_metal"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="2.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="5.76"/>
+  </joint>
 </robot>
