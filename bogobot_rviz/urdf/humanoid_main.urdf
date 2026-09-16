@@ -118,6 +118,20 @@
       </geometry>
     </visual>
   </link>
+  <link name="link_right_hip_motor">
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0225"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/motor_doble_join.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0225"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/motor_doble_join.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
   <link name="link_left_hip_metal">
     <collision>
       <origin rpy="0 0 0" xyz="0.0 0.0 -0.0175"/>
@@ -129,6 +143,20 @@
       <origin rpy="0 0 0" xyz="0.0 0.0 -0.0175"/>
       <geometry>
         <mesh filename="package://bogobot_rviz/meshes/metal_cadera_b4.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link_left_hip_motor">
+    <collision>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0225"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/motor_doble_join.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.0 0.0 -0.0225"/>
+      <geometry>
+        <mesh filename="package://bogobot_rviz/meshes/motor_doble_join.STL" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
@@ -186,6 +214,13 @@
     <origin rpy="0 0 0" xyz="0 0.055 0.3825"/>
     <parent link="chest"/>
     <child link="link_right_hip_metal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="5.76"/>
+  </joint>
+  <joint name="q9" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+    <parent link="link_right_hip_metal"/>
+    <child link="link_right_hip_motor"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="5.76"/>
   </joint>
@@ -194,6 +229,13 @@
     <origin rpy="0 0 0" xyz="0 -0.055 0.3825"/>
     <parent link="chest"/>
     <child link="link_left_hip_metal"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="2.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="5.76"/>
+  </joint>
+  <joint name="q10" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+    <parent link="link_left_hip_metal"/>
+    <child link="link_left_hip_motor"/>
     <axis xyz="1 0 0"/>
     <limit effort="2.5" lower="-6.283185307179586" upper="6.283185307179586" velocity="5.76"/>
   </joint>
